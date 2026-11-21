@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arts | Middlesex School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="theme.css">
+    <script src="theme.js"></script>
+    <script src="page-transition.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .voice-number-badge {
+            position: absolute;
+            background-color: #fbbf24;
+            color: #000;
+            font-weight: bold;
+            font-size: 0.75rem;
+            padding: 0.15rem 0.4rem;
+            border-radius: 9999px;
+            z-index: 9999;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            pointer-events: none;
+            transition: all 0.2s;
+        }
+        *:focus {
+            outline: 3px solid #3b82f6;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 relative">
+    <div id="toast-container" class="fixed top-5 left-1/2 transform -translate-x-1/2 z-50 flex flex-col gap-2" aria-live="polite"></div>
+
+    <nav class="bg-white shadow-md sticky top-0 z-40" aria-label="Main navigation">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="index.html" class="text-2xl font-bold text-red-900 tracking-tight">MIDDLESEX</a>
+                <div class="hidden md:flex items-center space-x-4 lg:space-x-8">
+                    <a href="about.html" class="text-gray-600 hover:text-red-800 px-3 py-2 rounded-md text-sm font-semibold transition">About</a>
+                    <a href="academics.html" class="text-gray-600 hover:text-red-800 px-3 py-2 rounded-md text-sm font-semibold transition">Academics</a>
+                    <a href="admissions.html" class="text-gray-600 hover:text-red-800 px-3 py-2 rounded-md text-sm font-semibold transition">Admissions</a>
+                    <a href="athletics.html" class="text-gray-600 hover:text-red-800 px-3 py-2 rounded-md text-sm font-semibold transition">Athletics</a>
+                    <a href="arts.html" aria-current="page" class="text-red-800 px-3 py-2 rounded-md text-sm font-semibold">Arts</a>
+                    <a href="https://www.mxschool.edu/student-life/" class="text-gray-600 hover:text-red-800 px-3 py-2 rounded-md text-sm font-semibold transition">Student Life</a>
+                    <a href="https://www.mxschool.edu/alumni/" class="text-gray-600 hover:text-red-800 px-3 py-2 rounded-md text-sm font-semibold transition">Alumni</a>
+                </div>
+                <details class="relative md:hidden">
+                    <summary class="cursor-pointer text-gray-600 font-semibold">Menu</summary>
+                    <div class="absolute right-0 mt-4 w-48 bg-white rounded-lg shadow-lg p-2 flex flex-col">
+                        <a href="index.html" class="px-3 py-2 hover:bg-gray-100 rounded">Home</a>
+                        <a href="about.html" class="px-3 py-2 hover:bg-gray-100 rounded">About</a>
+                        <a href="academics.html" class="px-3 py-2 hover:bg-gray-100 rounded">Academics</a>
+                        <a href="admissions.html" class="px-3 py-2 hover:bg-gray-100 rounded">Admissions</a>
+                        <a href="athletics.html" class="px-3 py-2 hover:bg-gray-100 rounded">Athletics</a>
+                        <a href="#programs" class="px-3 py-2 hover:bg-gray-100 rounded">Arts Programs</a>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-gradient-to-r from-red-900 to-red-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 text-center">
+            <p class="text-red-200 font-semibold uppercase tracking-widest mb-4">Arts at Middlesex</p>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6">Find Your Creative Voice</h1>
+            <p class="text-xl text-red-100 max-w-3xl mx-auto mb-10">Discover opportunities to create, perform, and explore the arts together.</p>
+            <a href="#programs" class="inline-block bg-white text-red-900 font-bold py-3 px-8 rounded-full hover:bg-gray-100 shadow-lg transition">Explore Arts Programs</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="py-20 bg-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Create and Discover</h2>
+                <p class="mt-6 text-lg text-gray-600 leading-relaxed">Students explore music, theatre, art history, and drawing before pursuing their interests through further courses and activities. From the studio to the stage, the arts offer opportunities to practice, collaborate, and share new ideas.</p>
+            </div>
+        </section>
+
+        <section id="programs" class="py-20 bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Explore the Arts</h2>
+                    <p class="mt-4 text-lg text-gray-600">Find ways to express yourself across the Middlesex community.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="bg-gray-50 rounded-2xl p-8 shadow-sm border border-gray-100">
+                        <h3 class="text-xl font-bold text-red-800 mb-3">Theatre</h3>
+                        <p class="text-gray-600 mb-6">Students work together on and behind the stage to bring productions to life.</p>
+                        <a href="https://www.mxschool.edu/arts/theatre" class="text-red-800 font-bold hover:text-red-600">Explore Theatre &rarr;</a>
+                    </div>
+                    <div class="bg-gray-50 rounded-2xl p-8 shadow-sm border border-gray-100">
+                        <h3 class="text-xl font-bold text-red-800 mb-3">Music</h3>
+                        <p class="text-gray-600 mb-6">Musicians develop their skills and share their work through lessons and ensembles.</p>
+                        <a href="https://www.mxschool.edu/arts/music" class="text-red-800 font-bold hover:text-red-600">Explore Music &rarr;</a>
+                    </div>
+                    <div class="bg-gray-50 rounded-2xl p-8 shadow-sm border border-gray-100">
+                        <h3 class="text-xl font-bold text-red-800 mb-3">Visual Arts</h3>
+                        <p class="text-gray-600 mb-6">Explore drawing, art history, and other visual media, with opportunities to exhibit work.</p>
+                        <a href="https://www.mxschool.edu/arts/visual-arts" class="text-red-800 font-bold hover:text-red-600">Explore Visual Arts &rarr;</a>
+                    </div>
+                    <div class="bg-gray-50 rounded-2xl p-8 shadow-sm border border-gray-100">
+                        <h3 class="text-xl font-bold text-red-800 mb-3">Graduate Plaques</h3>
+                        <p class="text-gray-600 mb-6">Discover the tradition of seniors creating individual wooden plaques for the school.</p>
+                        <a href="https://www.mxschool.edu/arts/graduate-plaques" class="text-red-800 font-bold hover:text-red-600">Explore Graduate Plaques &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-20 bg-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Arts at Middlesex</h2>
+                <p class="mt-6 text-lg text-gray-600 leading-relaxed">Visit the school's arts page for more information and upcoming events.</p>
+                <a href="https://www.mxschool.edu/arts/" class="inline-block mt-8 bg-red-800 text-white font-bold py-3 px-8 rounded-full hover:bg-red-700 shadow-lg transition">Visit the Official Arts Page</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-300 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="font-bold text-white text-xl mb-2">MIDDLESEX</p>
+            <p>Concord, Massachusetts</p>
+            <p class="mt-4">&copy; 2026 Middlesex School. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="voice-transcript" class="voice-transcript" hidden>
+        <span class="voice-transcript-label">Heard</span>
+        <span id="voice-transcript-text" role="status" aria-live="polite"></span>
+    </div>
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+        <div id="voice-status" class="hidden bg-white px-4 py-2 rounded-lg shadow-lg border border-gray-200 text-sm font-semibold text-gray-700 flex items-center gap-2">
+            <span class="relative flex h-3 w-3">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-red-600"></span>
+            </span>
+            Listening... Say "Help" for commands
+        </div>
+        <span id="theme-status" role="status" class="bg-white text-gray-800 text-sm rounded-lg"></span>
+        <button id="theme-toggle" type="button" aria-pressed="false" class="bg-white text-gray-800 px-4 py-2 rounded-lg shadow-lg border border-gray-200 text-sm font-semibold">Dark mode</button>
+        <input id="voice-search" type="text" placeholder="Search (say &quot;focus search&quot;, then &quot;type ...&quot;)" aria-label="Search" class="bg-white px-3 py-2 rounded-lg shadow-lg border border-gray-200 text-sm w-64">
+        <button id="toggle-voice-btn" class="bg-red-800 text-white rounded-full p-4 shadow-xl hover:bg-red-700 transition focus:outline-none focus:ring-4 focus:ring-red-300" aria-label="Toggle Voice Engine">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
+            </svg>
+        </button>
+    </div>
+    <script src="voice.js"></script>
+</body>
+</html>

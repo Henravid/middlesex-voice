@@ -1,0 +1,130 @@
+.page-transition {
+    position: fixed;
+    inset: 0;
+    z-index: 20000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: #f9fafb;
+    color: #7f1d1d;
+    font-weight: 700;
+    text-align: center;
+}
+
+.page-transition-spinner {
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid #e5e7eb;
+    border-top-color: #991b1b;
+    border-radius: 50%;
+    animation: page-transition-spin 0.8s linear infinite;
+}
+
+html.dark .page-transition {
+    background: #111827;
+    color: #f3f4f6;
+}
+
+html.dark .page-transition-spinner {
+    border-color: #4b5563;
+    border-top-color: #fca5a5;
+}
+
+@keyframes page-transition-spin {
+    to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .page-transition-spinner { animation: none; }
+}
+
+.voice-transcript {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    z-index: 50;
+    max-width: min(20rem, 45vw);
+    max-height: 8rem;
+    overflow-y: auto;
+    overflow-wrap: anywhere;
+    pointer-events: none;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    background: #fff;
+    color: #1f2937;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-size: 0.875rem;
+}
+
+.voice-transcript-label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+html.dark {
+    color-scheme: dark;
+    background: #111827;
+}
+
+html.dark body,
+html.dark main section.bg-gray-100 {
+    background-color: #111827;
+    color: #e5e7eb;
+}
+
+html.dark nav,
+html.dark nav .bg-white,
+html.dark main section.bg-white,
+html.dark main .bg-white,
+html.dark #voice-status,
+html.dark #voice-search,
+html.dark #theme-toggle,
+html.dark .voice-transcript,
+html.dark .voice-context-menu {
+    background-color: #1f2937;
+    color: #f3f4f6;
+}
+
+html.dark main .bg-gray-50 {
+    background-color: #374151;
+    border-color: #4b5563;
+}
+
+html.dark nav .text-red-900,
+html.dark nav .text-red-800,
+html.dark main .text-red-800 {
+    color: #fca5a5;
+}
+
+html.dark nav .text-gray-600,
+html.dark main .text-gray-900,
+html.dark main .text-gray-600,
+html.dark main .text-gray-500 {
+    color: #e5e7eb;
+}
+
+html.dark nav a:hover,
+html.dark main a.text-red-800:hover {
+    color: #fecaca;
+}
+
+html.dark nav .hover\:bg-gray-100:hover,
+html.dark .voice-context-menu button:hover {
+    background-color: #4b5563;
+}
+
+html.dark #voice-search,
+html.dark #voice-status,
+html.dark #theme-toggle,
+html.dark .voice-transcript,
+html.dark .voice-context-menu {
+    border-color: #6b7280;
+}
+
+html.dark #voice-search::placeholder {
+    color: #d1d5db;
+}

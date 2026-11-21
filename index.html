@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Middlesex School | Independent 9-12 School in MA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="theme.css">
+    <script src="theme.js"></script>
+    <script src="page-transition.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Voice Navigation Number Overlays */
+        .voice-number-badge {
+            position: absolute;
+            background-color: #fbbf24; /* Amber-400 */
+            color: #000;
+            font-weight: bold;
+            font-size: 0.75rem;
+            padding: 0.15rem 0.4rem;
+            border-radius: 9999px;
+            z-index: 9999;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            pointer-events: none;
+            transition: all 0.2s;
+        }
+        /* Focus styles to make tabbing visible */
+        *:focus {
+            outline: 3px solid #3b82f6; /* Blue-500 */
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 relative">
+
+    <!-- Toast Notification Container for Voice Feedback -->
+    <div id="toast-container" class="fixed top-5 left-1/2 transform -translate-x-1/2 z-50 flex flex-col gap-2"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl font-bold text-red-900 tracking-tight">MIDDLESEX</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4 lg:space-x-8">
+                    <a href="about.html" class="text-gray-600 hover:text-red-800 px-3 py-2 rounded-md text-sm font-semibold transition">About</a>
+                    <a href="academics.html" class="text-gray-600 hover:text-red-800 px-3 py-2 rounded-md text-sm font-semibold transition">Academics</a>
+                    <a href="admissions.html" class="text-gray-600 hover:text-red-800 px-3 py-2 rounded-md text-sm font-semibold transition">Admissions</a>
+                    <a href="athletics.html" class="text-gray-600 hover:text-red-800 px-3 py-2 rounded-md text-sm font-semibold transition">Athletics</a>
+                    <a href="arts.html" class="text-gray-600 hover:text-red-800 px-3 py-2 rounded-md text-sm font-semibold transition">Arts</a>
+                    <a href="#student-life" class="text-gray-600 hover:text-red-800 px-3 py-2 rounded-md text-sm font-semibold transition">Student Life</a>
+                    <a href="#alumni" class="text-gray-600 hover:text-red-800 px-3 py-2 rounded-md text-sm font-semibold transition">Alumni</a>
+                </div>
+                <details class="relative flex items-center md:hidden">
+                    <summary class="cursor-pointer text-gray-600 font-semibold">Menu</summary>
+                    <div class="absolute right-0 mt-4 w-48 bg-white rounded-lg shadow-lg p-2 flex flex-col">
+                        <a href="about.html" class="px-3 py-2 hover:bg-gray-100 rounded">About</a>
+                        <a href="academics.html" class="px-3 py-2 hover:bg-gray-100 rounded">Academics</a>
+                        <a href="admissions.html" class="px-3 py-2 hover:bg-gray-100 rounded">Admissions</a>
+                        <a href="athletics.html" class="px-3 py-2 hover:bg-gray-100 rounded">Athletics</a>
+                        <a href="arts.html" class="px-3 py-2 hover:bg-gray-100 rounded">Arts</a>
+                        <a href="#student-life" class="px-3 py-2 hover:bg-gray-100 rounded">Student Life</a>
+                        <a href="#alumni" class="px-3 py-2 hover:bg-gray-100 rounded">Alumni</a>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-red-900 overflow-hidden">
+        <div class="absolute inset-0">
+            <!-- Simulated background image with gradient overlay -->
+            <div class="w-full h-full bg-gradient-to-r from-red-900 to-red-700 opacity-90"></div>
+            <img src="https://placehold.co/1920x1080/4a0404/ffffff?text=Middlesex+Campus" alt="Middlesex Campus" class="w-full h-full object-cover mix-blend-multiply" onerror="this.style.display='none'">
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 flex flex-col items-center text-center">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6">
+                A Place to Discover Your Promise
+            </h1>
+            <p class="mt-4 text-xl text-red-100 max-w-3xl mb-10">
+                When you come to Middlesex, you'll find a place full of opportunity, challenge, and friendship. A place to take risks, become a leader, discover passions, and find your promise.
+            </p>
+            <div class="flex gap-4">
+                <a href="https://portals.veracross.com/mxschool/form/inquiry/auto_account/account-lookup" class="bg-white text-red-900 font-bold py-3 px-8 rounded-full hover:bg-gray-100 shadow-lg transition transform hover:-translate-y-1">
+                    Inquire Today
+                </a>
+                <a href="admissions.html#next-steps" class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-red-900 transition transform hover:-translate-y-1">
+                    How to Apply
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Sections -->
+    <main>
+        <!-- Statistics Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">A Place to Excel</h2>
+                    <p class="mt-4 max-w-2xl text-lg text-gray-500 mx-auto">A small school with big opportunities, offering the faculty, programs, and facilities needed to achieve your highest aspirations.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <!-- Stat 1 -->
+                    <div class="bg-gray-50 rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition border border-gray-100">
+                        <div class="text-5xl font-extrabold text-red-800 mb-4">12</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Students Per Class</h3>
+                        <p class="text-gray-600">On average. Our 4:1 student-faculty ratio ensures every student feels truly known and supported.</p>
+                    </div>
+                    <!-- Stat 2 -->
+                    <div class="bg-gray-50 rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition border border-gray-100">
+                        <div class="text-5xl font-extrabold text-red-800 mb-4">44</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Arts Courses</h3>
+                        <p class="text-gray-600">Taught by professional artists ready to inspire and mentor you, from novice to expert.</p>
+                    </div>
+                    <!-- Stat 3 -->
+                    <div class="bg-gray-50 rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition border border-gray-100">
+                        <div class="text-5xl font-extrabold text-red-800 mb-4">350</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Acres of Campus</h3>
+                        <p class="text-gray-600">State-of-the-art facilities, a 26-acre pond, and forest trails, located just 25 miles from Boston.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Informational Section -->
+        <section class="py-20 bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col lg:flex-row">
+                    <div class="w-full lg:w-1/2 h-64 lg:h-auto bg-red-800 relative">
+                        <img src="https://placehold.co/800x600/7f1d1d/ffffff?text=Students+on+Campus" alt="Students" class="w-full h-full object-cover mix-blend-overlay">
+                    </div>
+                    <div class="w-full lg:w-1/2 p-10 lg:p-16 flex flex-col justify-center">
+                        <h2 class="text-3xl font-extrabold text-gray-900 mb-6">Discover Your Talents</h2>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            <strong>Writing Workshop:</strong> Our renowned program ensures every student acquires a strong foundation in writing through weekly assignments and one-on-one feedback.
+                        </p>
+                        <p class="text-gray-600 mb-8 leading-relaxed">
+                            <strong>Mindfulness:</strong> Every student takes an "inner education" course to train attention and relate skillfully to emotions. 97% recommend the course.
+                        </p>
+                        <a href="academics.html" class="self-start bg-red-900 text-white font-bold py-3 px-8 rounded-full hover:bg-red-800 transition">
+                            Explore Academics
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="md:col-span-2">
+                <h3 class="text-white text-xl font-bold mb-4">Middlesex School</h3>
+                <p class="mb-2">1400 Lowell Road</p>
+                <p class="mb-2">Concord, Massachusetts 01742</p>
+                <p class="mb-6 font-semibold">978.369.2550</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white transition">Careers</a></li>
+                    <li><a href="#" class="hover:text-white transition">Calendar</a></li>
+                    <li><a href="#" class="hover:text-white transition">Directions</a></li>
+                    <li><a href="#" class="hover:text-white transition">Financial Aid</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">Connect</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white transition">Instagram</a></li>
+                    <li><a href="#" class="hover:text-white transition">Facebook</a></li>
+                    <li><a href="#" class="hover:text-white transition">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-gray-700 text-sm text-gray-500">
+            <p>&copy; 2026 Middlesex School. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="voice-transcript" class="voice-transcript" hidden>
+        <span class="voice-transcript-label">Heard</span>
+        <span id="voice-transcript-text" role="status" aria-live="polite"></span>
+    </div>
+
+    <!-- Voice Navigation Controls -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+        <div id="voice-status" class="hidden bg-white px-4 py-2 rounded-lg shadow-lg border border-gray-200 text-sm font-semibold text-gray-700 flex items-center gap-2">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-red-600"></span>
+            </span>
+            Listening... Say "Help" for commands
+        </div>
+        <span id="theme-status" role="status" class="bg-white text-gray-800 text-sm rounded-lg"></span>
+        <button id="theme-toggle" type="button" aria-pressed="false" class="bg-white text-gray-800 px-4 py-2 rounded-lg shadow-lg border border-gray-200 text-sm font-semibold">Dark mode</button>
+        <input id="voice-search" type="text" placeholder="Search (say &quot;focus search&quot;, then &quot;type ...&quot;)" aria-label="Search" class="bg-white px-3 py-2 rounded-lg shadow-lg border border-gray-200 text-sm w-64">
+        <button id="toggle-voice-btn" class="bg-red-800 text-white rounded-full p-4 shadow-xl hover:bg-red-700 transition focus:outline-none focus:ring-4 focus:ring-red-300" aria-label="Toggle Voice Engine">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <!-- Microphone Icon -->
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <script src="voice.js"></script>
+</body>
+</html>
